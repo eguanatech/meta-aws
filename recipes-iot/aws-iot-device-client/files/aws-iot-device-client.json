@@ -1,0 +1,44 @@
+{
+  "endpoint": "a28wmqmkcrbwwj-ats.iot.us-east-2.amazonaws.com",
+  "cert": "/usr/share/aws-credentials/bootstrap-certificate.pem.crt",
+  "key": "/usr/share/aws-credentials/bootstrap-private.pem.key",
+  "root-ca": "/usr/share/aws-credentials/AmazonRootCA1.pem",
+  "logging": {
+    "level": "DEBUG",
+    "type": "FILE",
+    "file": "/var/log/aws-iot-device-client.log",
+    "enable-sdk-logging": false,
+    "sdk-log-level": "TRACE",
+    "sdk-log-file": "/var/log/sdk.log"
+  },
+  "jobs": {
+    "enabled": false
+  },
+  "tunneling": {
+    "enabled": true
+  },
+  "device-defender": {
+    "enabled": false,
+    "interval": 300
+  },
+  "fleet-provisioning": {
+    "enabled": true,
+    "template-name": "6ul-provisioning-template",
+    "csr-file": "",
+    "device-key": ""
+  },
+  "samples": {
+    "pub-sub": {
+      "enabled": false
+    }
+  },
+  "config-shadow": {
+    "enabled": false
+  },
+  "sample-shadow": {
+    "enabled": false,
+    "shadow-name": "",
+    "shadow-input-file": "",
+    "shadow-output-file": ""
+  }
+}
