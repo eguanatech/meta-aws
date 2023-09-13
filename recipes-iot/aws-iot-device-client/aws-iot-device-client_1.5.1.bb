@@ -11,7 +11,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=3eb31626add6ada64ff9ac772bd3c653"
 
 BRANCH ?= "joe-ng-aws-dev"
 
-SRC_URI = "git://github.com/eguanatech/aws-iot-device-client.git;protocol=https;branch=${BRANCH};rev=d47ef3026f7b97e18a6910a78a039c7aa81b458a \
+SRC_URI = "git://github.com/eguanatech/aws-iot-device-client.git;protocol=https;branch=${BRANCH};rev=bf9df7bdee95b4be89e0fc14cc12c64280bb0b23 \
            file://01-missing-thread-includes.patch \
            file://02-missing-thread-includes.patch \
            file://aws-iot-device-client.json \
