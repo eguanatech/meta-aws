@@ -11,7 +11,7 @@ DEPENDS += "boost catch2 openssl protobuf protobuf-native zlib"
 BRANCH ?= "joe-ng-aws-dev"
 
 PV = "3.1.1+git${SRCPV}"
-SRC_URI = "git://github.com/eguanatech/aws-iot-securetunneling-localproxy.git;protocol=https;branch=${BRANCH};rev=6fca5266e58baed9ad1ac1c5760144092a528cd6 \
+SRC_URI = "git://github.com/eguanatech/aws-iot-securetunneling-localproxy.git;protocol=https;branch=${BRANCH};rev=072393c6b858a4ee0aebc2865970bd944e21cb8b \
            file://0001-patch-dependency-versions.patch"
 
 S = "${WORKDIR}/git"
