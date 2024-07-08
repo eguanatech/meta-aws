@@ -4,9 +4,10 @@
     "key": "/usr/share/aws-credentials/bootstrap-private.pem.key",
     "root-ca": "/usr/share/aws-credentials/AmazonRootCA1.pem",
     "logging": {
+        "enable-sdk-logging": true,
         "level": "DEBUG",
         "type": "FILE",
-        "file": "/var/log/aws-iot-device-client.log"
+        "file": "/var/log/aws-iot-device-client/aws-iot-device-client.log"
     },
     "jobs": {
         "enabled": false

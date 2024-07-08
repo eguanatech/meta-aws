@@ -15,6 +15,7 @@ SRC_URI = "git://github.com/eguanatech/aws-iot-device-client.git;protocol=https;
            file://01-missing-thread-includes.patch \
            file://02-missing-thread-includes.patch \
            file://aws-iot-device-client.json \
+           file://aws-iot-device-client.sh \
            file://aws-iot-device-client \
 "
 
@@ -34,13 +35,14 @@ do_install() {
   install -d ${D}${sysconfdir}/init.d
   install -d ${D}${sysconfdir}/rc5.d
 
-  install -m 0755 ${WORKDIR}/build/aws-iot-device-client \
+  # Use prebuilt aws iot device client for now.
+  install -m 0755 ${WORKDIR}/aws-iot-device-client \
                   ${D}${base_sbindir}/aws-iot-device-client
   install -m 0644 ${S}/setup/aws-iot-device-client.service \
                   ${D}${systemd_user_unitdir}/aws-iot-device-client.service
   install -m 0644 ${WORKDIR}/aws-iot-device-client.json \
                   ${D}${sysconfdir}/aws-iot-device-client.json
-  install -m 0755 ${WORKDIR}/aws-iot-device-client \
+  install -m 0755 ${WORKDIR}/aws-iot-device-client.sh \
                   ${D}${sysconfdir}/init.d/aws-iot-device-client
   
   sed -i -e "s,/sbin/aws-iot-device-client,/sbin/aws-iot-device-client --config /etc/aws-iot-device-client.json,g" \
