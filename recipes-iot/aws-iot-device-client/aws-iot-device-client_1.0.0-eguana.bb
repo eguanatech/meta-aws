@@ -11,7 +11,9 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=3eb31626add6ada64ff9ac772bd3c653"
 
 BRANCH ?= "imx6-eguana-aws-dev"
 
-SRC_URI = "git://github.com/eguanatech/aws-iot-device-client.git;protocol=https;branch=${BRANCH};tag=v4.1.17 \
+# FIX-ME: Currently device client we include in the firmware is using prebuilt binary, not the binary built by yocto project.
+#         Need to update the yocto project someday so we can build newer version of device client with yocto.
+SRC_URI = "git://github.com/eguanatech/aws-iot-device-client.git;protocol=https;branch=${BRANCH};tag=v1.4 \
            file://01-missing-thread-includes.patch \
            file://02-missing-thread-includes.patch \
            file://aws-iot-device-client.json \
