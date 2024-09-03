@@ -5,6 +5,7 @@
     "root-ca": "/usr/share/aws-credentials/AmazonRootCA1.pem",
     "logging": {
         "enable-sdk-logging": true,
+        "sdk-log-level": "WARN",
         "level": "DEBUG",
         "type": "FILE",
         "file": "/var/log/aws-iot-device-client/aws-iot-device-client.log"
