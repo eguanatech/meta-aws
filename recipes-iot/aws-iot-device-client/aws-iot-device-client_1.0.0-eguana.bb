@@ -9,7 +9,7 @@ PREFERRED_RPROVIDER:${PN} += "aws/crt-cpp"
 
 LIC_FILES_CHKSUM = "file://LICENSE;md5=3eb31626add6ada64ff9ac772bd3c653"
 
-BRANCH ?= "imx6-eguana-aws-dev"
+BRANCH ?= "master"
 
 # FIX-ME: Currently device client we include in the firmware is using prebuilt binary, not the binary built by yocto project.
 #         Need to update the yocto project someday so we can build newer version of device client with yocto.
