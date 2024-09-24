@@ -46,7 +46,7 @@ do_install() {
                   ${D}${sysconfdir}/aws-iot-device-client.json
   install -m 0755 ${WORKDIR}/aws-iot-device-client.sh \
                   ${D}${sysconfdir}/init.d/aws-iot-device-client
-  
+
   sed -i -e "s,/sbin/aws-iot-device-client,/sbin/aws-iot-device-client --config /etc/aws-iot-device-client.json,g" \
     ${D}${systemd_user_unitdir}/aws-iot-device-client.service
 
