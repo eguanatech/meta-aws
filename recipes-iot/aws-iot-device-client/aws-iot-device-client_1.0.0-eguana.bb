@@ -32,7 +32,7 @@ do_configure:append() {
 
 do_install() {
   install -d ${D}${base_sbindir}
-  install -d ${D}${sysconfdir}
+  install -d -m 0745 ${D}${sysconfdir}
   install -d ${D}${systemd_user_unitdir}
   install -d ${D}${sysconfdir}/init.d
   install -d ${D}${sysconfdir}/rc5.d
@@ -42,7 +42,7 @@ do_install() {
                   ${D}${base_sbindir}/aws-iot-device-client
   install -m 0644 ${S}/setup/aws-iot-device-client.service \
                   ${D}${systemd_user_unitdir}/aws-iot-device-client.service
-  install -m 0644 ${WORKDIR}/aws-iot-device-client.json \
+  install -m 0640 ${WORKDIR}/aws-iot-device-client.json \
                   ${D}${sysconfdir}/aws-iot-device-client.json
   install -m 0755 ${WORKDIR}/aws-iot-device-client.sh \
                   ${D}${sysconfdir}/init.d/aws-iot-device-client
