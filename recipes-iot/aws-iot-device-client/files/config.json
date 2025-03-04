@@ -1,0 +1,27 @@
+{
+    "endpoint": "ah4nnakjl7454-ats.iot.us-east-2.amazonaws.com",
+    "cert": "/etc/aws-credentials/bootstrap.cert.pem",
+    "key": "/etc/aws-credentials/bootstrap.private.key",
+    "root-ca": "/etc/aws-credentials/AmazonRootCA1.pem",
+    "logging": {
+        "level": "DEBUG",
+        "type": "FILE",
+        "file": "/var/log/aws-iot-device-client/aws-iot-device-client.log",
+        "enable-sdk-logging": true,
+        "sdk-log-level": "WARN",
+        "sdk-log-file": "/var/log/aws-iot-device-client/sdk.log"
+    },
+    "jobs": {
+        "enabled": false
+    },
+    "tunneling": {
+        "enabled": true
+    },
+    "device-defender": {
+        "enabled": false
+    },
+    "fleet-provisioning": {
+        "enabled": true,
+        "template-name": "RPI_ProvisioingByClaimPOC_TEMPLATE"
+    }
+}

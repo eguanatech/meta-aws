@@ -8,7 +8,7 @@ do_install() {
     install -d -m 0700 ${D}${sysconfdir}/aws-credentials
     install -m 0644 ${WORKDIR}/AmazonRootCA1.pem ${D}${sysconfdir}/aws-credentials/
     install -m 0644 ${WORKDIR}/bootstrap.cert.pem ${D}${sysconfdir}/aws-credentials/
-    install -m 0644 ${WORKDIR}/bootstrap.private.key ${D}${sysconfdir}/aws-credentials/
+    install -m 0600 ${WORKDIR}/bootstrap.private.key ${D}${sysconfdir}/aws-credentials/
 }
 
 FILES_${PN} += "${sysconfdir}/aws-credentials/AmazonRootCA1 \
