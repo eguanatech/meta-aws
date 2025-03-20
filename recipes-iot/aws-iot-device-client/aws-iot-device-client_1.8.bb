@@ -1,6 +1,6 @@
 SUMMARY = "AWS IoT Device Client"
 DESCRIPTION = "The AWS IoT Device Client is free, open-source, modular software written in C++ that you can compile and install on your Embedded Linux based IoT devices to access AWS IoT Core, AWS IoT Device Management, and AWS IoT Device Defender features by default."
-HOMEPAGE = "https://github.com/awslabs/aws-iot-device-client"
+HOMEPAGE = "https://github.com/eguanatech/aws-iot-device-client"
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=3eb31626add6ada64ff9ac772bd3c653"
 
@@ -12,14 +12,17 @@ DEPENDS = "\
 
 PROVIDES = "aws/aws-iot-device-client"
 
-BRANCH ?= "main"
+BRANCH ?= "rpi-eguana"
 
 # nooelint: oelint.file.patchsignedoff:Patch
 SRC_URI = "\
-    git://github.com/awslabs/aws-iot-device-client.git;protocol=https;branch=${BRANCH} \
+    git://github.com/eguanatech/aws-iot-device-client.git;protocol=https;branch=${BRANCH} \
     file://fix_jobs_warning_error.patch \
     file://run-ptest \
     file://ptest_result.py \
+    file://config.json \
+    file://aws-iot-device-client.sh \
+    file://aws-iot-device-client \
     "
 
 SRCREV = "bb7ff67e6fc1e307ac55163c82770f411b77462e"
@@ -37,11 +40,23 @@ do_install() {
   install -d ${D}${sysconfdir}
   install -d -m 0700 ${D}${sysconfdir}/aws-iot-device-client
   install -d ${D}${systemd_unitdir}/system
+  install -d ${D}${sysconfdir}/init.d
+  install -d ${D}${sysconfdir}/rc5.d
 
-  install -m 0755 ${WORKDIR}/build/aws-iot-device-client \
+  install -m 0755 ${WORKDIR}/aws-iot-device-client \
                   ${D}${base_sbindir}/aws-iot-device-client
   install -m 0644 ${S}/setup/aws-iot-device-client.service \
                   ${D}${systemd_system_unitdir}/aws-iot-device-client.service
+  install -m 0644 ${WORKDIR}/config.json \
+                  ${D}${sysconfdir}/aws-iot-device-client/config.json
+  install -m 0755 ${WORKDIR}/aws-iot-device-client.sh \
+                  ${D}${sysconfdir}/init.d/aws-iot-device-client
+
+  sed -i -e "s,/sbin/aws-iot-device-client,/sbin/aws-iot-device-client --config /etc/aws-iot-device-client/config.json,g" \
+    ${D}${systemd_system_unitdir}/aws-iot-device-client.service
+
+  cd ${D}${sysconfdir}/rc5.d
+  ln -sf ../init.d/aws-iot-device-client ./S98aws-iot-device-client
 }
 
 EXTRA_OECMAKE += "\
@@ -70,7 +85,8 @@ PACKAGECONFIG[dsn] = "-DEXCLUDE_SAMPLE_SHADOW=OFF,-DEXCLUDE_SAMPLE_SHADOW=ON,,"
 
 FILES:${PN} += "${base_sbindir}/sbin/aws-iot-device-client"
 FILES:${PN} += "${systemd_system_unitdir}/aws-iot-device-client.service"
-FILES:${PN} += "${sysconfdir}/aws-iot-device-client.json"
+FILES:${PN} += "${sysconfdir}/aws-iot-device-client/config.json"
+FILES:${PN} += "${sysconfdir}/init.d/aws-iot-device-client"
 
 RDEPENDS:${PN} = "\
     aws-iot-device-sdk-cpp-v2 \
