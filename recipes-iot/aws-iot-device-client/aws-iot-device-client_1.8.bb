@@ -12,12 +12,11 @@ DEPENDS = "\
 
 PROVIDES = "aws/aws-iot-device-client"
 
-BRANCH ?= "rpi-eguana"
+BRANCH ?= "rpi-master"
 
 # nooelint: oelint.file.patchsignedoff:Patch
 SRC_URI = "\
-    git://github.com/eguanatech/aws-iot-device-client.git;protocol=https;branch=${BRANCH} \
-    file://fix_jobs_warning_error.patch \
+    git://github.com/eguanatech/aws-iot-device-client.git;protocol=https;branch=${BRANCH} \    
     file://run-ptest \
     file://ptest_result.py \
     file://config.json \
@@ -25,7 +24,8 @@ SRC_URI = "\
     file://aws-iot-device-client \
     "
 
-SRCREV = "bb7ff67e6fc1e307ac55163c82770f411b77462e"
+#v1.1.0-rpi-release
+SRCREV = "c5b44080a01e9490be0e882f83078662d97811df"
 
 S = "${WORKDIR}/git"
 
