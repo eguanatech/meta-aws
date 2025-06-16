@@ -11,7 +11,7 @@
         "file": "/var/log/aws-iot-device-client/aws-iot-device-client.log"
     },
     "jobs": {
-        "enabled": false
+        "enabled": true
     },
     "tunneling": {
         "enabled": true
