@@ -12,7 +12,7 @@
         "sdk-log-file": "/var/log/aws-iot-device-client/sdk.log"
     },
     "jobs": {
-        "enabled": false
+        "enabled": true
     },
     "tunneling": {
         "enabled": true
