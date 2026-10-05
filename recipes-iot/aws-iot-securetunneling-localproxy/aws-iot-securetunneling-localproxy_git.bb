@@ -25,5 +25,5 @@ do_install () {
 
 PACKAGES =+ "${PN}-tests"
 FILES_${PN} = "${bindir}/localproxy"
-FILES_${PN}-tests = "${bindir}/localproxytest"
-RDEPENDS_${PN}-tests += "${PN}"
+FILES:${PN}-tests = "${bindir}/localproxytest"
+RDEPENDS:${PN}-tests += "${PN}"

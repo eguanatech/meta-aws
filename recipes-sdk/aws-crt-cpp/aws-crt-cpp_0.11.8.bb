@@ -22,7 +22,7 @@ SRCREV_crtcpp = "5c4d306b5637e9c64bfefcbce7b0c03ac64611cc"
 S = "${WORKDIR}/git"
 
 DEPENDS = "openssl s2n aws-c-common aws-c-io aws-c-mqtt aws-c-auth aws-c-http aws-checksums aws-c-event-stream"
-RDEPENDS_${PN} = "s2n aws-c-common"
+RDEPENDS:${PN} = "s2n aws-c-common"
 
 OECMAKE_SOURCEPATH = "${S}/aws-crt-cpp"
 CFLAGS:append = " -Wl,-Bsymbolic"
@@ -33,6 +33,6 @@ OECMAKE_BUILDPATH += "${WORKDIR}/build"
 OECMAKE_SOURCEPATH += "${S}"
 
 PACKAGES = "${PN}"
-INSANE_SKIP_${PN} += "installed-vs-shipped"
+INSANE_SKIP:${PN} += "installed-vs-shipped"
 BBCLASSEXTEND = "native nativesdk"
 

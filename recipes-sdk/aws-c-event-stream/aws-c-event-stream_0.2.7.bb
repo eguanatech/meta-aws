@@ -18,6 +18,7 @@ SRC_URI = "git://github.com/awslabs/aws-c-common.git;protocol=https;branch=${BRA
            git://github.com/awslabs/aws-c-event-stream.git;protocol=https;branch=${BRANCH};tag=${TAG};destsuffix=${S}/aws-c-event-stream;name=es \
 "
 
+SRCREV_FORMAT = "common_es"
 S = "${WORKDIR}/git"
 
 DEPENDS = "openssl s2n aws-c-common aws-checksums aws-c-io"

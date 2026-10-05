@@ -18,6 +18,7 @@ SRC_URI = "git://github.com/awslabs/aws-c-common.git;protocol=https;branch=${BRA
            git://github.com/awslabs/aws-c-compression.git;protocol=https;branch=${BRANCH};tag=${TAG};destsuffix=${S}/aws-c-compression;name=compression \
 "
 
+SRCREV_FORMAT = "common_compression"
 S = "${WORKDIR}/git"
 
 DEPENDS = "openssl s2n aws-c-common aws-c-cal aws-c-io"

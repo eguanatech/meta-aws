@@ -6,7 +6,7 @@ LICENSE = "Apache-2.0"
 S = "${WORKDIR}/git"
 
 DEPENDS += "cmake-native ${PYTHON_PN}-setuptools-native s2n aws-c-common aws-c-io aws-c-mqtt aws-c-auth aws-c-http aws-checksums aws-c-event-stream"
-RDEPENDS_${PN} = "python3 s2n aws-c-common aws-c-io aws-c-mqtt aws-c-auth aws-c-http aws-checksums aws-c-event-stream"
+RDEPENDS:${PN} = "python3 s2n aws-c-common aws-c-io aws-c-mqtt aws-c-auth aws-c-http aws-checksums aws-c-event-stream"
 #CFLAGS:append = " -Wl,-Bsymbolic"
 
 AWS_C_INSTALL = "${D}/usr"

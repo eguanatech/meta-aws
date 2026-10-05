@@ -10,5 +10,5 @@ SRC_URI = "git://github.com/jmespath/jmespath.py.git;protocol=https;tag=0.10.0"
 
 S = "${WORKDIR}/git"
 
-RDEPENDS_${PN} += "python3"
+RDEPENDS:${PN} += "python3"
 

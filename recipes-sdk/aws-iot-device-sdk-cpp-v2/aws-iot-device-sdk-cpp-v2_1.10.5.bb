@@ -18,7 +18,7 @@ SRC_URI = "git://github.com/awslabs/aws-c-common.git;protocol=https;branch=${BRA
 S= "${WORKDIR}/git"
 
 DEPENDS = "openssl aws-crt-cpp aws-c-iot"
-RDEPENDS_${PN} = "aws-crt-cpp aws-c-iot"
+RDEPENDS:${PN} = "aws-crt-cpp aws-c-iot"
 CFLAGS:append = " -Wl,-Bsymbolic"
 
 OECMAKE_BUILDPATH += "${WORKDIR}/build"
@@ -41,8 +41,8 @@ FILES_${PN} += "${libdir}/libIotDeviceCommon-cpp.so"
 FILES_${PN} += "${libdir}/libIotDeviceDefender-cpp.so"
 FILES_${PN} += "${libdir}/libIotSecureTunneling-cpp.so"
 FILES_${PN} += "${libdir}/libs2n.so"
-FILES_${PN}-dev += "${includedir}/aws/iotidentity/IotIdentityClient.h"
+FILES:${PN}-dev += "${includedir}/aws/iotidentity/IotIdentityClient.h"
 
 PACKAGES = "${PN}"
-INSANE_SKIP_${PN} += "installed-vs-shipped"
+INSANE_SKIP:${PN} += "installed-vs-shipped"
 BBCLASSEXTEND = "native nativesdk"

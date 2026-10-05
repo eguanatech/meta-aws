@@ -18,6 +18,7 @@ SRC_URI = "git://github.com/awslabs/aws-c-common.git;protocol=https;branch=${BRA
            git://github.com/awslabs/aws-c-iot.git;protocol=https;branch=${BRANCH};destsuffix=${S}/aws-c-iot;name=iot;tag=${TAG} \
 "
 
+SRCREV_FORMAT = "common_iot"
 S = "${WORKDIR}/git"
 
 DEPENDS = "aws-crt-cpp"

@@ -22,7 +22,7 @@ FILES_${PN} = "/usr/lib/${SHR} /usr/bin"
 do_package_qa[noexec] = "1"
 EXCLUDE_FROM_SHLIBS = "1"
 
-RDEPENDS_${PN} += " \
+RDEPENDS:${PN} += " \
     libgl \
     libxi \
     libxtst \
@@ -83,4 +83,4 @@ do_install:append:x86-64() {
 }
 
 FILES_${PN} += " /lib64"
-INSANE_SKIP_${PN} += " libdir"
+INSANE_SKIP:${PN} += " libdir"

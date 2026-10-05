@@ -34,7 +34,7 @@ SRC_URI[x86-64.sha256sum]  = "28f9ec7c64e937d309bd5b70903020e9ed590626de08a8151b
 
 # Release specific configuration
 
-RDEPENDS_${PN} += "ca-certificates python3-json python3-numbers sqlite3"
+RDEPENDS:${PN} += "ca-certificates python3-json python3-numbers sqlite3"
 
 do_install:append:x86-64() {
     # create symbolic link /lib64/ld-linux-x86-64.so.2 to enable loading the binary
@@ -44,4 +44,4 @@ do_install:append:x86-64() {
 }
 
 FILES_${PN} += " /lib64"
-INSANE_SKIP_${PN} += " libdir"
+INSANE_SKIP:${PN} += " libdir"

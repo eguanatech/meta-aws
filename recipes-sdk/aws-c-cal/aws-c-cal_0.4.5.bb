@@ -22,7 +22,7 @@ SRCREV_cal = "61d66740b1469a0caef09932621e3e92ee3967e2"
 S = "${WORKDIR}/git"
 
 DEPENDS = "openssl s2n aws-c-common"
-RDEPENDS_${PN} = "s2n aws-c-common"
+RDEPENDS:${PN} = "s2n aws-c-common"
 
 CFLAGS:append = " -Wl,-Bsymbolic"
 OECMAKE_SOURCEPATH = "${S}/aws-c-cal"
@@ -32,6 +32,6 @@ EXTRA_OECMAKE += "-DCMAKE_PREFIX_PATH=$D/usr"
 EXTRA_OECMAKE += "-DCMAKE_INSTALL_PREFIX=$D/usr"
 
 PACKAGES = "${PN}"
-INSANE_SKIP_${PN} += "installed-vs-shipped"
+INSANE_SKIP:${PN} += "installed-vs-shipped"
 BBCLASSEXTEND = "native nativesdk"
 

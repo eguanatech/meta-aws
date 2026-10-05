@@ -27,8 +27,8 @@ PACKAGES =+ " \
 PROVIDES += "${PACKAGES}"
 
 FILES_${PN} += "${libdir}/libaws-cpp-sdk-core.so"
-FILES_${PN}-iot = "${libdir}/libaws-cpp-sdk-iot.so"
-FILES_${PN}-s3-crt = "${libdir}/libaws-cpp-sdk-s3-crt.so"
+FILES:${PN}-iot = "${libdir}/libaws-cpp-sdk-iot.so"
+FILES:${PN}-s3-crt = "${libdir}/libaws-cpp-sdk-s3-crt.so"
 
 FILES_SOLIBSDEV = ""
 
@@ -49,7 +49,7 @@ OECMAKE_CXX_FLAGS += "-Wno-deprecated-declarations"
 ALLOW_EMPTY_${PN} = "1"
 ALLOW_EMPTY_${PN}-dbg = "1"
 
-FILES_${PN}-staticdev += "${libdir}"
+FILES:${PN}-staticdev += "${libdir}"
 
 # Patch the resulting aws-cpp-sdk-core-targets.cmake to remove absolute paths to libcurl.so and libz.so
 # This can be an issue with older versions of CMake

@@ -86,8 +86,8 @@ do_install() {
 }
 
 PACKAGES =+ "${PN}-tests"
-FILES_${PN}-tests = "${datadir}/dlr/tests"
-RDEPENDS_${PN}-tests += "${PN}"
+FILES:${PN}-tests = "${datadir}/dlr/tests"
+RDEPENDS:${PN}-tests += "${PN}"
 DEPENDS += "googletest python3-setuptools"
 
 # Versioned libs are not produced

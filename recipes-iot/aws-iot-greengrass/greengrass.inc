@@ -90,6 +90,6 @@ USERADD_PARAM:${PN} = "-r -M -N -g ggc_group -s /bin/false ggc_user"
 #   Binary was already stripped
 #   No GNU_HASH in the elf binary
 #
-INSANE_SKIP_${PN} += "already-stripped ldflags file-rdeps"
+INSANE_SKIP:${PN} += "already-stripped ldflags file-rdeps"
 
-RDEPENDS_${PN} += "ca-certificates python3-json python3-numbers sqlite3"
+RDEPENDS:${PN} += "ca-certificates python3-json python3-numbers sqlite3"

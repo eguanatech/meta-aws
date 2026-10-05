@@ -12,7 +12,7 @@ SRCREV = "16b73b81da29149581a433cf7b6e69fcdd11176a"
 S= "${WORKDIR}/git"
 PACKAGES = "${PN}"
 DEPENDS = "openssl aws-iot-device-sdk-cpp-v2 googletest"
-RDEPENDS_${PN} = "openssl aws-iot-device-sdk-cpp-v2"
+RDEPENDS:${PN} = "openssl aws-iot-device-sdk-cpp-v2"
 
 inherit cmake
 
@@ -57,7 +57,7 @@ FILES_${PN} += "${base_sbindir}/sbin/aws-iot-device-client"
 FILES_${PN} += "${systemd_system_unitdir}/aws-iot-device-client.service"
 FILES_${PN} += "${sysconfdir}/aws-iot-device-client.json"
 
-INSANE_SKIP_${PN}:append = "already-stripped"
+INSANE_SKIP:${PN}:append = "already-stripped"
 
 inherit systemd
 SYSTEMD_AUTO_ENABLE = "enable"
