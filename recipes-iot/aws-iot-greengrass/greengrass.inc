@@ -81,8 +81,8 @@ INITSCRIPT_PARAMS = "defaults 80 20"
 SYSTEMD_SERVICE_${PN} = "greengrass.service"
 
 USERADD_PACKAGES = "${PN}"
-GROUPADD_PARAM_${PN} = "-r ggc_group"
-USERADD_PARAM_${PN} = "-r -M -N -g ggc_group -s /bin/false ggc_user"
+GROUPADD_PARAM:${PN} = "-r ggc_group"
+USERADD_PARAM:${PN} = "-r -M -N -g ggc_group -s /bin/false ggc_user"
 
 #
 # Disable failing QA checks:
