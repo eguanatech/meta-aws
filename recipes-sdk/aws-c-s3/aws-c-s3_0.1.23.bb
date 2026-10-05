@@ -17,6 +17,7 @@ TAG_COMMON ?= "v0.6.8"
 SRC_URI = "git://github.com/awslabs/aws-c-common.git;protocol=https;branch=${BRANCH};tag=${TAG_COMMON};destsuffix=${S}/aws-c-common;name=common \
            git://github.com/awslabs/aws-c-s3.git;protocol=https;branch=${BRANCH};tag=${TAG};destsuffix=${S}/aws-c-s3;name=s3 \
 "
+SRCREV_FORMAT = "common_s3"
 
 S= "${WORKDIR}/git"
 

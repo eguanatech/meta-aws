@@ -19,6 +19,7 @@ SRC_URI = "git://github.com/neo-ai/neo-ai-dlr.git;branch=${BRANCH};protocol=http
            https://neo-ai-dlr-test-artifacts.s3-us-west-2.amazonaws.com/compiled-models/release-1.5.0/pipeline_model2-LINUX_X86_64.tar.gz;name=model2;subdir=pipeline_model2 \
            https://neo-ai-dlr-test-artifacts.s3-us-west-2.amazonaws.com/compiled-models/release-1.5.0/inverselabel-ml_m4.tar.gz;name=inverselabel;subdir=inverselabel \
           "
+SRCREV_FORMAT = "neo_cat224_streetsmall_resnet_xgboost_mobilenet_automl_model1_model2_inverselabel"
 
 SRCREV_neo-ai-dlr = "d363c087e2d93938beb3d3a836b0b29d0c910451"
 

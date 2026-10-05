@@ -16,6 +16,7 @@ TAG_COMMON ?= "v0.6.8"
 SRC_URI = "git://github.com/awslabs/aws-c-common.git;protocol=https;branch=${BRANCH};tag=${TAG_COMMON};destsuffix=${S}/aws-c-common;name=common \
            git://github.com/awslabs/aws-c-auth.git;protocol=https;branch=${BRANCH};tag=${TAG};destsuffix=${S}/aws-c-auth;name=auth \
 "
+SRCREV_FORMAT = "common_auth"
 
 S= "${WORKDIR}/git"
 
