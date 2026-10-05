@@ -12,7 +12,7 @@ do_configure:prepend() {
 }
 
 DEPENDS = "openssl"
-CFLAGS:append " -Wl,-Bsymbolic"
+CFLAGS:append = " -Wl,-Bsymbolic"
 
 EXTRA_OECMAKE += "-DBUILD_DEPS=ON"
 EXTRA_OECMAKE += "-DBUILD_TESTING=OFF"

@@ -60,7 +60,7 @@ FILES_${PN} += "${base_sbindir}/sbin/aws-iot-device-client"
 FILES_${PN} += "${systemd_system_unitdir}/aws-iot-device-client.service"
 FILES_${PN} += "${sysconfdir}/aws-iot-device-client.json"
 
-INSANE_SKIP_${PN}:append "already-stripped"
+INSANE_SKIP_${PN}:append = "already-stripped"
 
 inherit systemd
 SYSTEMD_AUTO_ENABLE = "enable"

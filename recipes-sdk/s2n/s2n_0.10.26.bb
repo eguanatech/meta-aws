@@ -16,7 +16,7 @@ SRCREV = "49c46200d6a6b5aee76c5f9adb86c329a737a6ca"
 S= "${WORKDIR}/git"
 
 DEPENDS = "openssl"
-CFLAGS:append " -Wl,-Bsymbolic"
+CFLAGS:append = " -Wl,-Bsymbolic"
 
 EXTRA_OECMAKE += "-DBUILD_TESTING=OFF"
 #EXTRA_OECMAKE += "-DBUILD_SHARED_LIBS=ON"
