@@ -25,6 +25,7 @@ SRC_URI = "git://github.com/dmlc/tvm;protocol=https;branch=${BRANCH};name=tvm \
 "
 
 SRCREV_tvm = "76c239269935288e51fbce14f135d75ad9742b2a"
+SRCREV_FORMAT = "tvm_dmlc_halideir_dlpack_rang"
 SRCREV_dmlc-core = "d07fb7a443b5db8a89d65a15a024af6a425615a5"
 SRCREV_halideir = "b257a9221ee1e5180d994b3488ddcc259b0ac157"
 SRCREV_dlpack = "5c792cef3aee54ad8b7000111c9dc1797f327b59"

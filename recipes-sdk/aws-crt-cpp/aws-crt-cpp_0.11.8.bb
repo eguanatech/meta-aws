@@ -16,6 +16,7 @@ SRC_URI = "git://github.com/awslabs/aws-c-common.git;protocol=https;branch=${BRA
 "
 
 SRCREV_common = "00c91eeb186970d50690ebbdceefdeae5c31fb4c"
+SRCREV_FORMAT = "common_crtcpp"
 SRCREV_crtcpp = "5c4d306b5637e9c64bfefcbce7b0c03ac64611cc"
 
 S = "${WORKDIR}/git"

@@ -16,6 +16,7 @@ SRC_URI = "git://github.com/awslabs/aws-c-common.git;protocol=https;branch=${BRA
 "
 
 SRCREV_common = "00c91eeb186970d50690ebbdceefdeae5c31fb4c"
+SRCREV_FORMAT = "common_http"
 SRCREV_http = "9b50788b3ded7fe97c53d9a66c533959c32a4b4f"
 
 S = "${WORKDIR}/git"

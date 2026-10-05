@@ -21,6 +21,7 @@ SRC_URI = "git://github.com/awslabs/aws-c-common.git;protocol=https;branch=${BRA
 # For this module, the tag doesn't work and the commit hash for the
 # tag doesn't work.  So, we pick a hash that's "close enough".
 SRCREV_crtcpp = "626047e24d966badd8253c56f728c9ad0065722a"
+SRCREV_FORMAT = "common_crtcpp"
 
 S = "${WORKDIR}/git"
 

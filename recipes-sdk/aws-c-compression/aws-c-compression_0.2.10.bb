@@ -16,6 +16,7 @@ SRC_URI = "git://github.com/awslabs/aws-c-common.git;protocol=https;branch=${BRA
 "
 
 SRCREV_common = "00c91eeb186970d50690ebbdceefdeae5c31fb4c"
+SRCREV_FORMAT = "common_compression"
 SRCREV_compression = "f2be13afe410611fcac07b6519b96ce1ad4e4831"
 
 S = "${WORKDIR}/git"

@@ -17,6 +17,7 @@ SRC_URI = "git://github.com/awslabs/aws-c-common.git;protocol=https;branch=${BRA
 "
 
 SRCREV_common = "00c91eeb186970d50690ebbdceefdeae5c31fb4c"
+SRCREV_FORMAT = "common_checksums"
 SRCREV_checksums = "99bb0ad4b89d335d638536694352c45e0d2188f5"
 
 S = "${WORKDIR}/git"
