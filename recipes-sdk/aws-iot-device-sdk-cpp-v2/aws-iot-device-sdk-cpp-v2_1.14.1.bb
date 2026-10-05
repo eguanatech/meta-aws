@@ -13,9 +13,10 @@ BRANCH ?= "main"
 TAG ?= "v${PV}"
 TAG_COMMON ?= "v0.6.8"
 
-SRC_URI = "git://github.com/awslabs/aws-c-common.git;protocol=https;branch=${BRANCH};destsuffix=${S}/aws-c-common;tag=${TAG_COMMON} \
-           git://github.com/aws/aws-iot-device-sdk-cpp-v2.git;protocol=https;branch=${BRANCH};destsuffix=${S}/aws-iot-device-sdk-cpp-v2;tag=${TAG} \
+SRC_URI = "git://github.com/awslabs/aws-c-common.git;protocol=https;branch=${BRANCH};destsuffix=${S}/aws-c-common;name=common;tag=${TAG_COMMON} \
+           git://github.com/aws/aws-iot-device-sdk-cpp-v2.git;protocol=https;branch=${BRANCH};destsuffix=${S}/aws-iot-device-sdk-cpp-v2;name=sdk;tag=${TAG} \
 "
+SRCREV_FORMAT = "common_sdk"
 
 S = "${WORKDIR}/git"
 
