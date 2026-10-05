@@ -5,10 +5,10 @@ LICENSE = "GPL-2"
 LIC_FILES_CHKSUM = "file://../${BASE}/LICENSE;md5=3e0b59f8fac05c3c03d4a26bbda13f8f"
 SHR             = "amazon-corretto-${PV}"
 BASE_aarch64    = "amazon-corretto-${PV}-linux-aarch64"
-SRC_URI_aarch64 = "https://corretto.aws/downloads/resources/${PV}/amazon-corretto-${PV}-linux-aarch64.tar.gz;name=aarch64"
+SRC_URI:aarch64 = "https://corretto.aws/downloads/resources/${PV}/amazon-corretto-${PV}-linux-aarch64.tar.gz;name=aarch64"
 
 BASE_x86-64     = "amazon-corretto-${PV}-linux-x64"
-SRC_URI_x86-64  = "https://corretto.aws/downloads/resources/${PV}/amazon-corretto-${PV}-linux-x64.tar.gz;name=x86-64"
+SRC_URI:x86-64  = "https://corretto.aws/downloads/resources/${PV}/amazon-corretto-${PV}-linux-x64.tar.gz;name=x86-64"
 
 SRC_URI[aarch64.md5sum]    = "10243aca398feccd1a66a90b93f6f21f"
 SRC_URI[aarch64.sha256sum] = "1def4d9550c83d152d720c353c02dd42588b60d734e3c1776d271a874aceb3f8"
@@ -72,7 +72,7 @@ do_install() {
     ln -s ../lib/${SHR}/bin/serialver
 }
 
-do_install_append_x86-64() {
+do_install:append:x86-64() {
     # create symbolic link /lib64/ld-linux-x86-64.so.2 to enable
     # loading the binary When maintainers build binaries on ubuntu,
     # this is the library they are linking to, and if we don't set it

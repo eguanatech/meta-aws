@@ -24,7 +24,7 @@ DEPENDS = "openssl s2n aws-c-common aws-c-io aws-c-mqtt aws-c-auth aws-c-http aw
 RDEPENDS_${PN} = "s2n aws-c-common"
 
 OECMAKE_SOURCEPATH = "${S}/aws-crt-cpp"
-CFLAGS_append = " -Wl,-Bsymbolic"
+CFLAGS:append " -Wl,-Bsymbolic"
 EXTRA_OECMAKE += "-DCMAKE_MODULE_PATH=${S}/aws-c-common/cmake"
 EXTRA_OECMAKE += "-DCMAKE_PREFIX_PATH=$D/usr"
 EXTRA_OECMAKE += "-DCMAKE_INSTALL_PREFIX=$D/usr"

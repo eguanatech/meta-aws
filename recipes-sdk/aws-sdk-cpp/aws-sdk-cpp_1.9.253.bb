@@ -53,7 +53,7 @@ FILES_${PN}-staticdev += "${libdir}"
 
 # Patch the resulting aws-cpp-sdk-core-targets.cmake to remove absolute paths to libcurl.so and libz.so
 # This can be an issue with older versions of CMake
-do_install_append() {
+do_install:append() {
    sed -i -E 's#;[^;]+libcurl\.so;#;libcurl.so;#' ${D}/usr/lib/cmake/aws-cpp-sdk-core/aws-cpp-sdk-core-targets.cmake
    sed -i -E 's#;[^;]+libz\.so;#;libz.so;#' ${D}/usr/lib/cmake/aws-cpp-sdk-core/aws-cpp-sdk-core-targets.cmake
 }

@@ -44,12 +44,12 @@ SRC_URI[inverselabel.sha256sum] = "1bd13905b526fc0e7ead51a88aa6d9e506befdd2e3a7a
 
 S = "${WORKDIR}/git"
 
-do_configure_prepend() {
+do_configure:prepend() {
   cd ${S}
   git submodule update --init --recursive
 }
 
-do_configure_append() {
+do_configure:append() {
   cp -f ${WORKDIR}/cat224-3.txt ${S}/build/cat224-3.txt
   cp -f ${WORKDIR}/street_small.npy ${S}/build/street_small.npy
   cp -rf ${WORKDIR}/resnet_v1_5_50 ${S}/build/

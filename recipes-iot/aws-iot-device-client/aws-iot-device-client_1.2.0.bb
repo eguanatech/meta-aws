@@ -18,7 +18,7 @@ RDEPENDS_${PN} = "openssl aws-iot-device-sdk-cpp-v2"
 
 inherit cmake
 
-do_configure_append() {
+do_configure:append() {
 }
 
 do_install() {
@@ -60,7 +60,7 @@ FILES_${PN} += "${base_sbindir}/sbin/aws-iot-device-client"
 FILES_${PN} += "${systemd_system_unitdir}/aws-iot-device-client.service"
 FILES_${PN} += "${sysconfdir}/aws-iot-device-client.json"
 
-INSANE_SKIP_${PN}_append = "already-stripped"
+INSANE_SKIP_${PN}:append "already-stripped"
 
 inherit systemd
 SYSTEMD_AUTO_ENABLE = "enable"

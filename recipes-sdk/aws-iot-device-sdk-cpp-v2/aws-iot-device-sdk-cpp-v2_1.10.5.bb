@@ -19,7 +19,7 @@ S= "${WORKDIR}/git"
 
 DEPENDS = "openssl aws-crt-cpp aws-c-iot"
 RDEPENDS_${PN} = "aws-crt-cpp aws-c-iot"
-CFLAGS_append = " -Wl,-Bsymbolic"
+CFLAGS:append " -Wl,-Bsymbolic"
 
 OECMAKE_BUILDPATH += "${WORKDIR}/build"
 OECMAKE_SOURCEPATH += "${S}/aws-iot-device-sdk-cpp-v2"

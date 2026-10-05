@@ -23,7 +23,7 @@ S= "${WORKDIR}/git"
 DEPENDS = "openssl aws-c-auth"
 RDEPENDS_${PN} = "aws-c-auth"
 
-CFLAGS_append = " -Wl,-Bsymbolic"
+CFLAGS:append " -Wl,-Bsymbolic"
 
 OECMAKE_SOURCEPATH = "${S}/aws-c-s3"
 EXTRA_OECMAKE += "-DBUILD_TESTING=OFF"

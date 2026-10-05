@@ -16,7 +16,7 @@ SRCREV = "00c91eeb186970d50690ebbdceefdeae5c31fb4c"
 
 S= "${WORKDIR}/git"
 
-CFLAGS_append = " -Wl,-Bsymbolic"
+CFLAGS:append " -Wl,-Bsymbolic"
 EXTRA_OECMAKE += "-DCMAKE_INSTALL_PREFIX=$D/usr"
 OECMAKE_BUILDPATH += "${WORKDIR}/build"
 OECMAKE_SOURCEPATH += "${S}"

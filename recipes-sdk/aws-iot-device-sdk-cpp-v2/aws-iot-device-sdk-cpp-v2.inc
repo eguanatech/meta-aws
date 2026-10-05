@@ -6,13 +6,13 @@ PROVIDES += "aws/aws-iot-device-sdk-cpp-v2"
 
 S= "${WORKDIR}/git"
 
-do_configure_prepend() {
+do_configure:prepend() {
   cd ${S}
   git submodule update --init --recursive
 }
 
 DEPENDS = "openssl"
-CFLAGS_append = " -Wl,-Bsymbolic"
+CFLAGS:append " -Wl,-Bsymbolic"
 
 EXTRA_OECMAKE += "-DBUILD_DEPS=ON"
 EXTRA_OECMAKE += "-DBUILD_TESTING=OFF"
